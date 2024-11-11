@@ -3,7 +3,6 @@ import java.util.List;
 
 public class PascalTriangle {
     public static void main(String[] args) {
-
 //        System.out.println(generate(3));
         System.out.println(generate(5));
     }
@@ -32,7 +31,6 @@ public class PascalTriangle {
                     row.add(1);
                     continue;
                 }
-
                 row.add(triangle.get(n - 2).get(i - 1) + triangle.get(n - 2).get(i));
             }
 
