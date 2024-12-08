@@ -6,7 +6,7 @@ import java.util.Set;
 public class KeyboardRow500 {
 
     public static void main(String[] args) {
-//        findWords(new String[]{"Alaska"});
+        findWords(new String[]{"Alaska"});
         findWords(new String[]{"abdfs", "cccd", "a", "qwwewm"});
     }
 
