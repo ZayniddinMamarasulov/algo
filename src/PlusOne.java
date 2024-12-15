@@ -12,27 +12,17 @@ public class PlusOne {
     }
 
     public static int[] plusOne(int[] digits) {
-        int lastElement = digits[digits.length - 1];
-        int[] newArray = new int[digits.length + 1];
-
-        System.arraycopy(digits, 0, newArray, 0, digits.length);
-
-        if (lastElement == 9)
-            if (digits[0] == 9) {
-                newArray[0] = 1;
-                for (int i = 1; i < newArray.length; i++) {
-                    newArray[i] = 0;
-                }
-                return newArray;
-            } else {
-                digits[0]++;
-                for (int i = 1; i < digits.length; i++) {
-                    digits[i] = 0;
-                }
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
                 return digits;
             }
+            digits[i] = 0;
+        }
 
-        digits[digits.length - 1]++;
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+
         return digits;
     }
 
