@@ -8,9 +8,9 @@ public class DifferenceBetweenElement2535 {
         int allSum = 0;
         int digitSum = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            allSum += nums[i];
-            digitSum += sumOfDigits(nums[i]);
+        for (int num : nums) {
+            allSum += num;
+            digitSum += sumOfDigits(num);
         }
 
         return Math.abs(allSum - digitSum);
