@@ -4,17 +4,13 @@ public class DivisibleAndNon2894 {
         differenceOfSums(10, 3);
     }
 
+    static int cnt(int x, int n) {
+        int cnt = n / x;
+        return cnt * x + cnt * (cnt - 1) * x / 2;// sum of all number <= n divisible by x
+    }
+
     public static int differenceOfSums(int n, int m) {
-        int divisibleSum = 0;
-        int nonDivisibleSum = 0;
-        int allSum = 0;
-
-        for (int i = 1; i <= n; i++) {
-            allSum += i;
-            if (i % m == 0) divisibleSum += i;
-            else nonDivisibleSum += i;
-        }
-
-        return nonDivisibleSum - divisibleSum;
+        int cnt = cnt(m, n);
+        return n * (n + 1) / 2 - cnt * 2;
     }
 }
