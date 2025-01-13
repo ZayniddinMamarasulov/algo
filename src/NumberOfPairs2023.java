@@ -13,12 +13,9 @@ public class NumberOfPairs2023 {
             String temp = target.replaceFirst(nums[i], "");
             int tempIndex = target.indexOf(nums[i]);
 
-            for (int j = 0; j < nums.length; j++) {
-                if (i != j)
-                    if (nums[j].equals(temp) && tempIndex == 0) {
-                        count++;
-                    }
-            }
+            for (int j = 0; j < nums.length; j++)
+                if (i != j && nums[j].equals(temp) && tempIndex == 0)
+                    count++;
         }
 
         return count;
