@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LongestPalindrome {
+public class LongestPalindrome409 {
 
     public static void main(String[] args) {
         longestPalindrome("bananas");
