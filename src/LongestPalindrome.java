@@ -1,43 +1,24 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class LongestPalindrome {
 
     public static void main(String[] args) {
-        System.out.println("res->" + longestPalindrome("babad"));
-//        System.out.println(longestPalindrome("cbbd"));
+        longestPalindrome("bananas");
     }
 
-    public static String expand(String s, int i, int j) {
+    public static int longestPalindrome(String s) {
+        char[] input = s.toCharArray();
+        Set<Character> set = new HashSet<>();
+        int count = 0;
 
-        while (i >= 0 && j < s.length() && s.charAt(i) == s.charAt(j)) {
-            i -= 1;
-            j += 1;
-        }
-
-        return s.substring(i + 1, j);
-    }
-
-    public static String longestPalindrome(String s) {
-        int n = s.length();
-        List<String> answer = new ArrayList<>();
+        for (char c : input)
+            if (set.contains(c)) {
+                set.remove(c);
+                count += 2;
+            } else
+                set.add(c);
 
 
-        for (int i = 0; i < n; i++) {
-            String polOdd = expand(s, i, i);
-            String polEven = expand(s, i, i + 1);
-
-            answer.add(polEven);
-            answer.add(polOdd);
-        }
-
-        String res = "";
-
-        for (int i = 0; i < answer.size(); i++) {
-            if (answer.get(i).length() > res.length())
-                res = answer.get(i);
-        }
-
-        return res;
+        return set.isEmpty() ? count : count + 1;
     }
 }
